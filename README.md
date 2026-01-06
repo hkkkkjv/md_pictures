@@ -163,8 +163,8 @@
 
 1. **Клонирование репозитория**
 ```bash
-git clone https://github.com/your-username/song-review-app.git
-cd song-review-app
+git clone https://github.com/hkkkkjv/musicapp_android.git
+cd musicapp_android
 ```
 
 2. **Настройка Firebase**
