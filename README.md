@@ -76,7 +76,10 @@
 
 ### Auth Screen
 > Экран аутентификации с выбором входа или регистрации
-> [`screenshots/auth_screen.png`](screenshots/auth_screen.png)
+> <p align="center">
+ <img width="200px" src="screenshots/auth_screen.png" alt="qr"/>
+</p>
+
 
 ### Search Screen
 > Экран поиска песен с фильтрацией по источникам
