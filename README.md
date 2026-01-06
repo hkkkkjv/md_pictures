@@ -8,9 +8,7 @@
 ## 🎬 Видеообзор
 
 > <p align="center">
->   <a href="screenshots/screencast.mp4">
->     <img width="300px" src="screenshots/screencast.mp4" alt="Demo Video"/>
->   </a>
+>   <video src="screenshots/screencast.mp4" width="320" height="240" controls></video>
 > </p>
 > 
 > **Посмотрите видеодемонстрацию приложения** (3 минуты обзора всех функций)
