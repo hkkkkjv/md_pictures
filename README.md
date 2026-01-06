@@ -89,8 +89,8 @@
 ### 🎵 Детали песни
 > <p align="center">
 >   <img width="200px" src="screenshots/song_details_screen.png" alt="Song Details"/>
->   <img width="200px" src="screenshots/song_details_deezer_screen.png" alt="Song Details Deezer"/>
 >   <img width="200px" src="screenshots/song_details_review_screen.png" alt="Song Details with Reviews"/>
+>   <img width="200px" src="screenshots/song_details_deezer_screen.png" alt="Song Details Deezer"/>
 > </p>
 
 ### ✍️ Рецензии
