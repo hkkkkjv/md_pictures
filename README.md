@@ -8,7 +8,7 @@
 ## 🎬 Видеообзор
 
 > <p align="center">
->   <a href="screenshots/screencast.mp4">
+>   <a href="https://disk.360.yandex.ru/i/60qHQVdYFeqwtA">
 >     <img width="100px" src="screenshots/search_list_screen.png" alt="Demo Video"/>
 >   </a>
 >   <br>
