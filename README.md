@@ -88,39 +88,43 @@
 
 ## 📸 Скриншоты
 
-### 🔐 Аутентификация {#auth-screen}
+## 📸 Скриншоты
+
+<a name="auth-screen"></a>
+### 🔐 Аутентификация
 > <p align="center">
 >   <img width="200px" src="screenshots/auth_screen.png" alt="Auth Screen"/>
 >   <img width="200px" src="screenshots/auth_phone_screen.png" alt="Auth Phone Screen"/>
 > </p>
 
-### 🔍 Поиск песен {#search-screen}
+<a name="search-screen"></a>
+### 🔍 Поиск песен
 > <p align="center">
 >   <img width="200px" src="screenshots/search_screen.png" alt="Search Screen"/>
 >   <img width="200px" src="screenshots/search_list_screen.png" alt="Search List"/>
 > </p>
 
-### 🎵 Детали песни {#song-details-screen}
+<a name="song-details-screen"></a>
+### 🎵 Детали песни
 > <p align="center">
 >   <img width="200px" src="screenshots/song_details_screen.png" alt="Song Details"/>
 >   <img width="200px" src="screenshots/song_details_review_screen.png" alt="Song Details with Reviews"/>
 >   <img width="200px" src="screenshots/song_details_deezer_screen.png" alt="Song Details Deezer"/>
 > </p>
 
-### ✍️ Рецензии {#review-add-screen}
+<a name="review-add-screen"></a>
+### ✍️ Рецензии
 > <p align="center">
 >   <img width="200px" src="screenshots/review_add_screen.png" alt="Review Add"/>
-> </p>
-
-### 📖 Просмотр рецензии {#review-details-screen}
-> <p align="center">
 >   <img width="200px" src="screenshots/review_details_screen.png" alt="Review Details"/>
 > </p>
 
-### 👤 Профиль {#profile-screen}
+<a name="profile-screen"></a>
+### 👤 Профиль
 > <p align="center">
 >   <img width="200px" src="screenshots/profile_screen.png" alt="Profile Screen"/>
 > </p>
+
 
 
 ---
