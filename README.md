@@ -8,10 +8,15 @@
 ## 🎬 Видеообзор
 
 > <p align="center">
->   <iframe width="560" height="315" src="screenshots/screencast.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+>   <a href="screenshots/screencast.mp4">
+>     <img width="100px" src="screenshots/search_list_screen.png" alt="Demo Video"/>
+>   </a>
+>   <br>
+>   <em>👆 Нажми для просмотра видео</em>
 > </p>
 > 
 > **Посмотрите видеодемонстрацию приложения** (3 минуты обзора всех функций)
+
 ## 🎯 Обзор
 
 **Song Review App** — это приложение для музыкальных фанатов, которые хотят делиться своими мнениями о песнях. Пользователи могут:
