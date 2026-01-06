@@ -74,41 +74,45 @@
 
 ## 📸 Скриншоты
 
-### Auth Screen
-> Экран аутентификации с выбором входа или регистрации
+### 🔐 Аутентификация
 > <p align="center">
- <img width="200px" src="screenshots/auth_screen.png" alt="qr"/>
-</p>
+>   <img width="200px" src="screenshots/auth_screen.jpg" alt="Auth Screen"/>
+>   <img width="200px" src="screenshots/auth_phone_screen.jpg" alt="Auth Phone Screen"/>
+> </p>
 
+### 🔍 Поиск песен
+> <p align="center">
+>   <img width="200px" src="screenshots/search_screen.jpg" alt="Search Screen"/>
+>   <img width="200px" src="screenshots/search_list_screen.jpg" alt="Search List"/>
+> </p>
 
-### Search Screen
-> Экран поиска песен с фильтрацией по источникам
-> [`screenshots/search_screen.png `](screenshots/search_screen.png)
+### 🎵 Детали песни
+> <p align="center">
+>   <img width="200px" src="screenshots/song_details_screen.jpg" alt="Song Details"/>
+>   <img width="200px" src="screenshots/song_details_deezer_screen.jpg" alt="Song Details Deezer"/>
+>   <img width="200px" src="screenshots/song_details_review_screen.jpg" alt="Song Details with Reviews"/>
+> </p>
 
-### Song Details Screen
-> Детальная информация о песне с плеером и рецензиями
-> [ `screenshots/song_details_screen.png`](screenshots/song_details_screen.png)
+### ✍️ Рецензии
+> <p align="center">
+>   <img width="200px" src="screenshots/review_add_screen.jpg" alt="Review Add"/>
+>   <img width="200px" src="screenshots/review_details_screen.jpg" alt="Review Details"/>
+> </p>
 
-### Review Add Screen
-> Форма создания/редактирования рецензии
-> [ `screenshots/review_add_screen.png`](screenshots/review_add_screen.png)
-
-### Review Details Screen
-> Подробный просмотр рецензии с красивым дизайном
-> [`screenshots/review_details_screen.png`](screenshots/review_details_screen.png)
-
-### Profile Screen
-> Профиль пользователя с его рецензиями
-> [](screenshots/profile_screen.png)
+### 👤 Профиль
+> <p align="center">
+>   <img width="200px" src="screenshots/profile_screen.jpg" alt="Profile Screen"/>
+> </p>
 
 ---
 
 ## 🛠️ Технический стек
 
 ### Язык и фреймворк
-- **Язык**: Kotlin
-- **UI Framework**: Jetpack Compose
-- **API уровень**: Android (минимум указать)
+- **Язык**: Kotlin 2.2.0
+- **UI Framework**: Jetpack Compose 1.10.0
+- **API уровень**: Android 8 - 15 (API 27-35)
+- **Архитектура**: MVVM + Clean Architecture
 
 ### Ключевые зависимости
 - **Android Material 3** — современный дизайн и компоненты
