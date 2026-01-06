@@ -76,32 +76,32 @@
 
 ### 🔐 Аутентификация
 > <p align="center">
->   <img width="200px" src="screenshots/auth_screen.jpg" alt="Auth Screen"/>
->   <img width="200px" src="screenshots/auth_phone_screen.jpg" alt="Auth Phone Screen"/>
+>   <img width="200px" src="screenshots/auth_screen.png" alt="Auth Screen"/>
+>   <img width="200px" src="screenshots/auth_phone_screen.png" alt="Auth Phone Screen"/>
 > </p>
 
 ### 🔍 Поиск песен
 > <p align="center">
->   <img width="200px" src="screenshots/search_screen.jpg" alt="Search Screen"/>
->   <img width="200px" src="screenshots/search_list_screen.jpg" alt="Search List"/>
+>   <img width="200px" src="screenshots/search_screen.png" alt="Search Screen"/>
+>   <img width="200px" src="screenshots/search_list_screen.png" alt="Search List"/>
 > </p>
 
 ### 🎵 Детали песни
 > <p align="center">
->   <img width="200px" src="screenshots/song_details_screen.jpg" alt="Song Details"/>
->   <img width="200px" src="screenshots/song_details_deezer_screen.jpg" alt="Song Details Deezer"/>
->   <img width="200px" src="screenshots/song_details_review_screen.jpg" alt="Song Details with Reviews"/>
+>   <img width="200px" src="screenshots/song_details_screen.png" alt="Song Details"/>
+>   <img width="200px" src="screenshots/song_details_deezer_screen.png" alt="Song Details Deezer"/>
+>   <img width="200px" src="screenshots/song_details_review_screen.png" alt="Song Details with Reviews"/>
 > </p>
 
 ### ✍️ Рецензии
 > <p align="center">
->   <img width="200px" src="screenshots/review_add_screen.jpg" alt="Review Add"/>
->   <img width="200px" src="screenshots/review_details_screen.jpg" alt="Review Details"/>
+>   <img width="200px" src="screenshots/review_add_screen.png" alt="Review Add"/>
+>   <img width="200px" src="screenshots/review_details_screen.png" alt="Review Details"/>
 > </p>
 
 ### 👤 Профиль
 > <p align="center">
->   <img width="200px" src="screenshots/profile_screen.jpg" alt="Profile Screen"/>
+>   <img width="200px" src="screenshots/profile_screen.png" alt="Profile Screen"/>
 > </p>
 
 ---
