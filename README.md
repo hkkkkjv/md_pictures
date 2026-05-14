@@ -25,7 +25,7 @@
 4. Для проверки создайте два контакта с идентичным набором полей и нажмите «Удалить одинаковые контакты».
 
 ## Видеодемонстрация
-<video src="https://github.com/hkkkkjv/md_pictures/issues/1#issue-444712719)" width="320" height="240" controls></video>
+<video src="https://github.com/hkkkkjv/md_pictures/issues/1#issue-444712719" width="320" height="240" controls></video>
 Демонстрирует загрузку списка, группировку, обработку отказов в разрешениях, работу AIDL-сервиса и обновление UI после удаления дублей.
 
 ## Инженерные компромиссы
