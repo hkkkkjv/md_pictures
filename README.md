@@ -25,7 +25,9 @@
 4. Для проверки создайте два контакта с идентичным набором полей и нажмите «Удалить одинаковые контакты».
 
 ## Видеодемонстрация
+<p align="center" width="100%">
 <video src="https://private-user-images.githubusercontent.com/144042599/592587707-cab18e02-47a3-4810-bb17-f22d745d4137.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Nzg3NzI4NzUsIm5iZiI6MTc3ODc3MjU3NSwicGF0aCI6Ii8xNDQwNDI1OTkvNTkyNTg3NzA3LWNhYjE4ZTAyLTQ3YTMtNDgxMC1iYjE3LWYyMmQ3NDVkNDEzNy5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUxNFQxNTI5MzVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZTViMWQ3YmU0ZDBlN2NjZmNlY2MxZDA3OTJiMTg4NTNhZGUxOTY5MzhmODIzNDcwYmRkYzJlOWNhNzJmMDMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.HX1uITcwqqbtmGjcYyg25y4o__OrvTviPf2c15CxVU8" width="320" height="240" controls></video>
+</p>
 Демонстрирует загрузку списка, группировку, обработку отказов в разрешениях, работу AIDL-сервиса и обновление UI после удаления дублей.
 
 ## Инженерные компромиссы
