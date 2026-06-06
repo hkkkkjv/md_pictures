@@ -90,11 +90,13 @@ Bloom — кроссплатформенное приложение для ве�
 ## 📸 Скриншоты
 
 <div align="center">
-  <img src="images/Screenshot_20260606_033100.png" width="250" />
-  <img src="images/Screenshot_20260606_033213.png" width="250" />
-  <img src="images/Screenshot_20260606_033240.png" width="250" />
-  <img src="images/Screenshot_20260606_033533.png" width="250" />
-  <img src="images/Screenshot_20260606_033707.png" width="250" />
+  <img src="images/profile.png" width="250" />
+  <img src="images/makeup-bag-list.png" width="250" />
+  <img src="images/makeup-bag-product-adding.png" width="250" />
+  <img src="images/makeup-bag-product.png" width="250" />
+  <img src="images/skindiary-list.png" width="250" />
+  <img src="images/skindiary-details.png" width="250" />
+  <img src="images/skindiary-adding.png" width="250" />
 </div>
 
 ---
