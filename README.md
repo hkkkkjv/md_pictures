@@ -1,40 +1,103 @@
-# CleanContactsYADRO
+# 🌸 Bloom — Skincare Diary
 
-## Выполненные задания
-Реализован **Вариант 3**.
-- Отображение списка контактов устройства с группировкой по первой букве.
-- Поиск и удаление дубликатов через изолированный AIDL-сервис с автоматическим обновлением списка.
+**Состав команды:** Дергунова Ирина, Перовская Ольга  
+**Платформы:** Android (Min SDK 28) + Desktop (JVM)
 
-## Архитектура
-Проект разделен на три слоя по принципам Clean Architecture:
-- `domain/`: бизнес-модели, интерфейсы репозиториев и UseCase. Без Android-зависимостей.
-- `data/`: реализация `ContentResolver`, AIDL-мост, батч-обработка контактов, канонизация полей.
-- `presentation/`: MVI-паттерн, ViewModel, Compose UI, обработка разрешений.
-Зависимости внедряются через Hilt. Обмен данными организован через `Flow` и `SharedFlow`.
+---
 
-## Ключевые технические решения
-- **MVI + Compose:** Состояние управляется чистым `Reducer`. UI подписан на `StateFlow`, однократные события (Snackbar, навигация) передаются через `SharedFlow`. Сбор состояний выполняется через `collectAsStateWithLifecycle()`.
-- **AIDL Bridge:** `AidlServiceBridge` оборачивает IPC-вызов в suspend-функцию через `suspendCancellableCoroutine`. Реализован `linkToDeath` и гарантированный `unbind` при отмене корутины.
-- **Поиск дубликатов:** Батч-запрос к `ContactsContract.Data` с фильтрацией по значимым MIME-типам. `ContactCanonicalizer` формирует детерминированную строку из всех полей (имя, телефоны, email, организация, адреса, даты, заметки, родственники и др.). Мульти-значные поля сортируются и нормализуются. Удаление выполняется после закрытия курсора через `RawContacts.CONTENT_URI`.
-- **Реактивная загрузка:** `MutableStateFlow` триггер перезапускает поток через `flatMapLatest`. Инвалидация кэша вызывается автоматически после успешного удаления.
+## 📖 Содержание
+- [О проекте](#о-проекте)
+- [Ключевые возможности](#ключевые-возможности)
+- [Архитектура и стек](#архитектура-и-стек)
+- [Многомодульность](#многомодульность)
+- [Дизайн-система](#дизайн-система)
+- [Сеть и офлайн-режим](#сеть-и-офлайн-режим)
+- [Аналитика](#аналитика)
+- [Запуск и сборка](#запуск-и-сборка)
+- [Соответствие требованиям](#соответствие-требованиям)
 
-## Сборка и запуск
-1. Откройте проект в Android Studio (Iguana или новее).
-2. Синхронизируйте Gradle и запустите на устройстве/эмуляторе (Android 8.0+).
-3. Предоставьте разрешения `READ_CONTACTS` и `WRITE_CONTACTS`.
-4. Для проверки создайте два контакта с идентичным набором полей и нажмите «Удалить одинаковые контакты».
+---
 
-## Видеодемонстрация
-<p align="center" width="100%">
-<video src="https://private-user-images.githubusercontent.com/144042599/592587707-cab18e02-47a3-4810-bb17-f22d745d4137.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Nzg3NzI4NzUsIm5iZiI6MTc3ODc3MjU3NSwicGF0aCI6Ii8xNDQwNDI1OTkvNTkyNTg3NzA3LWNhYjE4ZTAyLTQ3YTMtNDgxMC1iYjE3LWYyMmQ3NDVkNDEzNy5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUxNFQxNTI5MzVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZTViMWQ3YmU0ZDBlN2NjZmNlY2MxZDA3OTJiMTg4NTNhZGUxOTY5MzhmODIzNDcwYmRkYzJlOWNhNzJmMDMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.HX1uITcwqqbtmGjcYyg25y4o__OrvTviPf2c15CxVU8" width="320" height="240" controls></video>
-</p>
-Демонстрирует загрузку списка, группировку, обработку отказов в разрешениях, работу AIDL-сервиса и обновление UI после удаления дублей.
+## 📱 О проекте
+Bloom — кроссплатформенное приложение для ведения дневника ухода за кожей и управления косметичкой. Помогает отслеживать состояние кожи, учитывать используемые средства и анализировать эффективность ухода. Построено на Kotlin Multiplatform и Compose Multiplatform с единой кодовой базой для Android и Desktop.
 
-## Инженерные компромиссы
-- **Отказ от Paging 3:** прямая загрузка в `Flow` занимает <200 мс для типичных объемов данных (<2000 контактов). Упрощает архитектуру без потери отзывчивости.
-- **Пакетная модуляризация:** упрощает настройку AIDL-генерации. Границы слоев строго соблюдены на уровне пакетов.
-- **Каноническая строка вместо объектного сравнения:** гарантирует детерминизм, упрощает логирование и исключает ошибки при сравнении коллекций в разном порядке.
-- **Сервис в отдельном процессе:** повышает отказоустойчивость UI, требует аккуратного управления `ServiceConnection` и передачи только сериализуемых данных.
+## ✨ Ключевые возможности
+- 🔐 **Авторизация:** Регистрация с верификацией email, вход, восстановление пароля. Безопасная работа с JWT (access + refresh).
+- 👤 **Профиль:** Просмотр и редактирование данных, смена пароля, загрузка аватара.
+- 📔 **Дневник кожи:** Создание записей с фото, оценкой состояния (1-10), уровнем увлажненности и проблемными зонами. Фильтрация по датам и сортировка.
+- 💄 **Косметичка:** Каталог продуктов с фото, категориями, составом (INCI) и личным рейтингом. Отслеживание срока годности (PAO) и архивирование.
+- 🔄 **Офлайн-синхронизация:** Создание записей без интернета с автоматической синхронизацией при появлении сети.
 
-## Стек технологий
-Kotlin, Coroutines/Flow, Jetpack Compose, Material 3, Hilt, AIDL, ContentResolver, Immutable Collections.
+## 🛠 Архитектура и стек
+Приложение построено по принципам **Clean Architecture** и **MVI** (Intent → State → Effect). ViewModel вынесены в shared-модуль. Навигация реализована на **Navigation 3**.
+
+| Категория | Технология | Версия |
+| :--- | :--- | :--- |
+| **Язык и UI** | Kotlin, Compose Multiplatform, Material3 | 2.3.20, 1.11.0, 1.10.0-alpha05 |
+| **Навигация** | Navigation 3 | 1.1.1 |
+| **Сеть** | Ktor Client | 3.5.0 |
+| **Локальная БД** | SQLDelight | 2.3.2 |
+| **DI** | Koin | 4.2.1 |
+| **Асинхронность** | Coroutines, Serialization, Datetime | 1.11.0, 1.11.0, 0.8.0 |
+| **Изображения** | Coil 3 | 3.4.0 |
+| **Хранилище** | Multiplatform Settings | 1.3.0 |
+| **Аналитика** | Firebase BOM, Crashlytics | 34.14.0, 3.0.7 |
+
+## 🧩 Многомодульность
+Проект строго разделен на модули для изоляции фич и ускорения компиляции:
+- **`core`**: Базовая инфраструктура (`data`, `domain`, `ui`, `navigation`).
+- **`feature`**: Бизнес-фичи (`auth`, `profile`, `skin-diary`, `makeup-bag`).
+- **Паттерн `api/impl`**: Каждая фича разделена на `api` (контракты, DTO, роуты) и `impl` (реализация, UI, ViewModel). Это предотвращает циклические зависимости и позволяет модулям не знать о внутренней реализации друг друга.
+
+## 🎨 Дизайн-система
+- **Темы:** Полная поддержка Light и Dark режимов на базе Material 3.
+- **Стилизация:** Кастомная лавандово-мятная палитра (`ColorsCustom`), унифицированная типографика (`StylesCustom`) и система отступов/радиусов (`DimensionsCustom`).
+- **Компоненты:** Библиотека переиспользуемых UI-элементов (`TopBarCustom`, `BottomBarCustom`, `DiaryCard`, `ProductCard`, `StarRating`, `CategoryChip` и др.).
+- **Ресурсы:** Используются нативные CMP Resources (`compose.components.resources`).
+
+## 🌐 Сеть и офлайн-режим
+- **Ktor Client:** Настроен с кастомным `AuthPlugin` для автоматического добавления Bearer-токена и `TokenRefresher` для бесшовного обновления access-токена при истечении (401).
+- **SQLDelight:** Используется для локального кэширования и офлайн-работы. Записи дневника сохраняются локально со статусом `pending` и автоматически отправляются на сервер (`synced`) при восстановлении связи.
+
+## 📊 Аналитика
+- **Firebase Analytics:** Автоматическое логирование открытия каждого экрана через `AnalyticsHelper` и `ScreenName`.
+- **Firebase Crashlytics:** Перехват и отправка крашей и non-fatal исключений для мониторинга стабильности.
+
+## 🚀 Запуск и сборка
+
+> ⚠️ **Важно:** Для работы аналитики и краш-репортов на Android необходимо добавить файл `google-services.json` в папку `composeApp/`.
+
+**Android:**
+```shell
+# macOS/Linux
+./gradlew :composeApp:assembleDebug
+
+# Windows
+.\gradlew.bat :composeApp:assembleDebug
+```
+
+**Desktop (JVM):**
+```shell
+# macOS/Linux
+./gradlew :composeApp:run
+
+# Windows
+.\gradlew.bat :composeApp:run
+```
+
+---
+
+## 📸 Скриншоты
+
+<div align="center">
+  <img src="images/Screenshot_20260606_033100.png" width="250" />
+  <img src="images/Screenshot_20260606_033213.png" width="250" />
+  <img src="images/Screenshot_20260606_033240.png" width="250" />
+  <img src="images/Screenshot_20260606_033533.png" width="250" />
+  <img src="images/Screenshot_20260606_033707.png" width="250" />
+</div>
+
+---
+---
+
+Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
